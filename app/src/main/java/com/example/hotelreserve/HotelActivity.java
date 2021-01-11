@@ -3,6 +3,7 @@ package com.example.hotelreserve;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +15,7 @@ public class HotelActivity extends AppCompatActivity {
     private static final String TAG = HotelActivity.class.getSimpleName();
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
     @BindView(R.id.progressBar) ProgressBar mProgressBar;
+    @BindView(R.id.errorTextView) TextView mErrorTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
