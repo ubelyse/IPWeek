@@ -19,6 +19,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class HotelActivity extends AppCompatActivity {
+
     private static final String TAG = HotelActivity.class.getSimpleName();
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
     @BindView(R.id.progressBar) ProgressBar mProgressBar;
@@ -47,7 +48,7 @@ public class HotelActivity extends AppCompatActivity {
 
                 if (response.isSuccessful()){
                     hotels= response.body().getBusinesses();
-                    mAdapter=new HotelsListAdapter(HotelActivity.this,hotels);
+                    mAdapter = new HotelsListAdapter(HotelActivity.this, hotels);
                     mRecyclerView.setAdapter(mAdapter);
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(HotelActivity.this);
                     mRecyclerView.setLayoutManager(layoutManager);

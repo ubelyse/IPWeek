@@ -20,9 +20,12 @@ public class HotelsListAdapter extends RecyclerView.Adapter<HotelsListAdapter.Ho
     private List<Business> mhotels;
     private Context mContext;
 
-    public HotelsListAdapter(List<Business> mhotels, Context mContext) {
-        this.mhotels = mhotels;
+    public HotelsListAdapter(List<Business> hotels, Context mContext) {
+        this.mhotels = hotels;
         this.mContext = mContext;
+    }
+
+    public HotelsListAdapter() {
     }
 
     @Override
@@ -46,10 +49,11 @@ public class HotelsListAdapter extends RecyclerView.Adapter<HotelsListAdapter.Ho
 
     public class HotelsViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.restaurantImageView) ImageView mRestaurantImageView;
-        @BindView(R.id.restaurantNameTextView) TextView mNameTextView;
+        @BindView(R.id.hotelimage) ImageView mhotelimage;
+        @BindView(R.id.hotelname) TextView mhotelname;
         @BindView(R.id.categoryTextView) TextView mCategoryTextView;
-        @BindView(R.id.ratingTextView) TextView mRatingTextView;private Context mContext;
+        @BindView(R.id.rating) TextView mrating;
+        private Context mContext;
 
         public HotelsViewHolder(View itemView) {
             super(itemView);
@@ -57,11 +61,11 @@ public class HotelsListAdapter extends RecyclerView.Adapter<HotelsListAdapter.Ho
             mContext = itemView.getContext();
         }
 
-        public void bindHotel(Business restaurant) {
-            Picasso.get().load(restaurant.getImageUrl()).into(mRestaurantImageView);
-            mNameTextView.setText(restaurant.getName());
-            mCategoryTextView.setText(restaurant.getCategories().get(0).getTitle());
-            mRatingTextView.setText("Rating: " + restaurant.getRating() + "/5");
+        public void bindHotel(Business hotel) {
+            Picasso.get().load(hotel.getImageUrl()).into(mhotelimage);
+            mhotelname.setText(hotel.getName());
+            mCategoryTextView.setText(hotel.getCategories().get(0).getTitle());
+            mrating.setText("Rating: " + hotel.getRating() + "/5");
         }
     }
 }
