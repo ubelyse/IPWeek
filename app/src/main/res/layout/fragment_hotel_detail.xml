@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:id="@+id/hotelimage"
-            android:src="@drawable/food_dish"
+            android:src="@drawable/hote"
             android:scaleType="centerCrop" />
 
         <RelativeLayout
@@ -29,8 +29,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Restaurant Name"
-                android:id="@+id/restaurantNameTextView"
+                android:text="Hotel Name"
+                android:id="@+id/hotelnametxt"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:textSize="20sp"
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:text="4.5/5"
                 android:id="@+id/ratingTextView"
-                android:layout_alignTop="@+id/restaurantNameTextView"
+                android:layout_alignTop="@+id/hotelnametxt"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"
                 android:textColor="@color/colorAccent"
@@ -51,9 +51,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Brunch, American"
-                android:id="@+id/cuisineTextView"
-                android:layout_below="@+id/restaurantNameTextView"
+                android:text="Saune,Yoga"
+                android:id="@+id/hoteltype"
+                android:layout_below="@+id/hotelnametxt"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:textColor="@color/colorSecondaryText"
@@ -71,7 +71,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_above="@+id/saveRestaurantButton"
+                android:layout_above="@+id/savehotelbtn"
                 android:paddingLeft="30dp"
                 android:paddingTop="20dp"
                 android:paddingRight="30dp">
@@ -120,8 +120,8 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Save Restaurant"
-                android:id="@+id/saveRestaurantButton"
+                android:text="Save Hotel"
+                android:id="@+id/savehotelbtn"
                 android:layout_alignParentBottom="true"
                 android:background="@color/colorAccent"
                 android:textColor="@color/colorTextIcons"
