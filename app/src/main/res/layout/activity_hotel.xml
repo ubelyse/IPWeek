@@ -16,14 +16,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Hotels near " />
+        android:text="Hotels near "
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/errorTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_margin="16dp"/>
+        android:layout_margin="16dp"
+        android:visibility="gone"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -31,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/locationTextView"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:visibility="gone"/>
 
 </RelativeLayout>
