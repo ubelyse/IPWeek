@@ -1,5 +1,5 @@
 
-package com.example.hotelreserve;
+package com.example.hotelreserve.ui;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

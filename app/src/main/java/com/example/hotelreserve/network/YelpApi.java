@@ -1,4 +1,6 @@
-package com.example.hotelreserve;
+package com.example.hotelreserve.network;
+
+import com.example.hotelreserve.ui.YelpBusinessesSearchResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

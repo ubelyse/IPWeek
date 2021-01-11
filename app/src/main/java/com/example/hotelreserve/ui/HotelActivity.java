@@ -1,4 +1,4 @@
-package com.example.hotelreserve;
+package com.example.hotelreserve.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.hotelreserve.R;
 import com.example.hotelreserve.adapter.HotelsListAdapter;
+import com.example.hotelreserve.network.YelpApi;
+import com.example.hotelreserve.network.YelpClient;
 
 import java.util.List;
 

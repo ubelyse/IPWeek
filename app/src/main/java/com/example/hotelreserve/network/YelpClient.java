@@ -1,4 +1,6 @@
-package com.example.hotelreserve;
+package com.example.hotelreserve.network;
+
+import com.example.hotelreserve.network.YelpApi;
 
 import java.io.IOException;
 
