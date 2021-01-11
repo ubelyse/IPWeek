@@ -16,8 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.findHotel) Button mhotel;
     @BindView(R.id.locationEditText)
     EditText mlocation;
-    @BindView(R.id.appNameTextView)
-    TextView mappname;
+    @BindView(R.id.appNameTextView) TextView mappname;
 
 
     @Override

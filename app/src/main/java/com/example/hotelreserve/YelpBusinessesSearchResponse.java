@@ -3,7 +3,6 @@ package com.example.hotelreserve;
 
 import java.util.List;
 
-import com.example.hotelreserve.Business;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 

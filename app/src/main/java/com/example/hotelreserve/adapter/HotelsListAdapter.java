@@ -1,4 +1,4 @@
-package com.example.hotelreserve;
+package com.example.hotelreserve.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.hotelreserve.Business;
+import com.example.hotelreserve.HotelActivity;
+import com.example.hotelreserve.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -20,12 +23,9 @@ public class HotelsListAdapter extends RecyclerView.Adapter<HotelsListAdapter.Ho
     private List<Business> mhotels;
     private Context mContext;
 
-    public HotelsListAdapter(List<Business> hotels, Context mContext) {
-        this.mhotels = hotels;
-        this.mContext = mContext;
-    }
-
-    public HotelsListAdapter() {
+    public HotelsListAdapter(Context context, List<Business> hotels) {
+        mContext = context;
+        mhotels = hotels;
     }
 
     @Override
