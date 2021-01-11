@@ -25,5 +25,7 @@ public class HotelActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
+
+        YelpApi client = YelpClient.getClient();
     }
 }
