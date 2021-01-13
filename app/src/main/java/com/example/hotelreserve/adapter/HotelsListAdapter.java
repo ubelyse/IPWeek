@@ -18,7 +18,6 @@ import com.squareup.picasso.Picasso;
 import org.parceler.Parcels;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,7 +40,7 @@ public class HotelsListAdapter extends RecyclerView.Adapter<HotelsListAdapter.Ho
 
     @Override
     public void onBindViewHolder(HotelsListAdapter.HotelViewHolder holder, int position){
-        holder.bindhotels(mhotels.get(position));
+        holder.bindRestaurant(mhotels.get(position));
     }
 
     @Override
@@ -50,7 +49,7 @@ public class HotelsListAdapter extends RecyclerView.Adapter<HotelsListAdapter.Ho
     }
 
     public class HotelViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        @BindView(R.id.hotelimage) ImageView mRestaurantImageView;
+        @BindView(R.id.restaurantImageView) ImageView mRestaurantImageView;
         @BindView(R.id.hotelnametxt) TextView mNameTextView;
         @BindView(R.id.categoryTextView) TextView mCategoryTextView;
         @BindView(R.id.ratingTextView) TextView mRatingTextView;
@@ -64,7 +63,7 @@ public class HotelsListAdapter extends RecyclerView.Adapter<HotelsListAdapter.Ho
             itemView.setOnClickListener(this);
         }
 
-        public void bindhotels(Hotels hotels) {
+        public void bindRestaurant(Hotels hotels) {
             mNameTextView.setText(hotels.getName());
             mCategoryTextView.setText(hotels.getCategories().get(0));
             mRatingTextView.setText("Rating: " + hotels.getRating() + "/5");

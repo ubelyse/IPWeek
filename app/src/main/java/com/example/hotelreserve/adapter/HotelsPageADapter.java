@@ -8,7 +8,6 @@ import com.example.hotelreserve.models.Hotels;
 import com.example.hotelreserve.ui.HotelDetailFragment;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class HotelsPageADapter extends FragmentPagerAdapter {
     private ArrayList<Hotels> mhotels;

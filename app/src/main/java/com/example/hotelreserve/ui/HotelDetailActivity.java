@@ -1,20 +1,17 @@
 package com.example.hotelreserve.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
 import com.example.hotelreserve.R;
 import com.example.hotelreserve.adapter.HotelsPageADapter;
-import com.example.hotelreserve.models.AddressObj;
 import com.example.hotelreserve.models.Hotels;
 
 import org.parceler.Parcels;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

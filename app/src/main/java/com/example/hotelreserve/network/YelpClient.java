@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.HttpUrl;
-import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -37,7 +36,7 @@ public class YelpClient {
     }
 
     public ArrayList<Hotels> processResults(Response response){
-        ArrayList<Hotels> restaurants = new ArrayList<>();
+        ArrayList<Hotels> hotel = new ArrayList<>();
         try{
             String jsonData = response.body().string();
             JSONObject yelpJSON = new JSONObject(jsonData);
@@ -62,9 +61,9 @@ public class YelpClient {
                     for (int y = 0; y < categoriesJSON.length(); y++){
                         categories.add(categoriesJSON.getJSONObject(y).getString("title"));
                     }
-                    Hotels restaurant = new Hotels(name, phone, website, rating,
+                    Hotels hotels = new Hotels(name, phone, website, rating,
                             imageUrl, address, latitude, longitude, categories);
-                    restaurants.add(restaurant);
+                    hotel.add(hotels);
                 }
             }
         } catch (IOException e) {
@@ -72,6 +71,6 @@ public class YelpClient {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return restaurants;
+        return hotel;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.hotelreserve.ui;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -7,8 +8,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.hotelreserve.adapter.HotelsListAdapter;
 import com.example.hotelreserve.R;
+import com.example.hotelreserve.adapter.HotelsListAdapter;
 import com.example.hotelreserve.models.Hotels;
 import com.example.hotelreserve.network.YelpClient;
 
@@ -44,7 +45,7 @@ public class HotelActivity extends AppCompatActivity {
         yelpClient.findHotels(location, new Callback(){
 
             @Override
-            public void onFailure(okhttp3.Call call, IOException e){
+            public void onFailure(Call call, IOException e){
                 e.printStackTrace();
             }
 
@@ -64,5 +65,4 @@ public class HotelActivity extends AppCompatActivity {
             }
         });
     }
-
 }

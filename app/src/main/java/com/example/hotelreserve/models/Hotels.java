@@ -1,10 +1,7 @@
 package com.example.hotelreserve.models;
 
-import org.parceler.Parcel;
-
 import java.util.ArrayList;
 
-@Parcel
 public class Hotels {
     String name;
     String phone;

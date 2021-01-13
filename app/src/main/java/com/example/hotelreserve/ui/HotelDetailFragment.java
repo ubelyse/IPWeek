@@ -2,8 +2,6 @@ package com.example.hotelreserve.ui;
 
 import androidx.fragment.app.Fragment;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,15 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.hotelreserve.R;
-import com.example.hotelreserve.models.AddressObj;
-import com.example.hotelreserve.models.Category;
 import com.example.hotelreserve.models.Hotels;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -42,17 +35,17 @@ public class HotelDetailFragment extends Fragment {
     }
 
     public static HotelDetailFragment newInstance(Hotels hotels){
-        HotelDetailFragment restaurantDetailFragment = new HotelDetailFragment();
+        HotelDetailFragment hotelDetailFragment = new HotelDetailFragment();
         Bundle args = new Bundle();
-        args.putParcelable("hotels", Parcels.wrap(hotels));
-        restaurantDetailFragment.setArguments(args);
-        return restaurantDetailFragment;
+        args.putParcelable("restaurant", Parcels.wrap(hotels));
+        hotelDetailFragment.setArguments(args);
+        return hotelDetailFragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        mhotels = Parcels.unwrap(getArguments().getParcelable("hotels"));
+        mhotels = Parcels.unwrap(getArguments().getParcelable("hotel"));
     }
 
     @Override
