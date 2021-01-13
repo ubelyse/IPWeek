@@ -11,8 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HotelReserve">
-        <activity android:name=".ui.HotelDetailActivity"></activity>
-        <activity android:name=".ui.HotelActivity" />
+        <activity android:name=".ui.HotelDetailActivity" />
+        <activity android:name=".ui.HotelActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.MainActivity" />
+        </activity>
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

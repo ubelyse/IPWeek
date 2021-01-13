@@ -26,7 +26,7 @@ public class HotelDetailFragment extends Fragment {
     @BindView(R.id.websiteTextView) TextView mWebsiteLabel;
     @BindView(R.id.phoneTextView) TextView mPhoneLabel;
     @BindView(R.id.addressTextView) TextView mAddressLabel;
-    @BindView(R.id.savehotelbtn) TextView mSaveRestaurantButton;
+    @BindView(R.id.savehotelbtn) TextView msavehotelbtn;
 
     private Hotels mhotels;
 
@@ -37,7 +37,7 @@ public class HotelDetailFragment extends Fragment {
     public static HotelDetailFragment newInstance(Hotels hotels){
         HotelDetailFragment hotelDetailFragment = new HotelDetailFragment();
         Bundle args = new Bundle();
-        args.putParcelable("restaurant", Parcels.wrap(hotels));
+        args.putParcelable("hotel", Parcels.wrap(hotels));
         hotelDetailFragment.setArguments(args);
         return hotelDetailFragment;
     }
@@ -45,6 +45,7 @@ public class HotelDetailFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
+        assert getArguments() != null;
         mhotels = Parcels.unwrap(getArguments().getParcelable("hotel"));
     }
 

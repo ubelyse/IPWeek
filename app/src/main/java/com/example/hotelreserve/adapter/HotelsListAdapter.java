@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class HotelsListAdapter extends RecyclerView.Adapter<HotelsListAdapter.HotelViewHolder>{
+public class HotelsListAdapter extends RecyclerView.Adapter<HotelsListAdapter.HotelViewHolder> {
     private ArrayList<Hotels> mhotels = new ArrayList<>();
     private Context mContext;
 
@@ -40,7 +40,7 @@ public class HotelsListAdapter extends RecyclerView.Adapter<HotelsListAdapter.Ho
 
     @Override
     public void onBindViewHolder(HotelsListAdapter.HotelViewHolder holder, int position){
-        holder.bindRestaurant(mhotels.get(position));
+        holder.bindHotels(mhotels.get(position));
     }
 
     @Override
@@ -49,7 +49,7 @@ public class HotelsListAdapter extends RecyclerView.Adapter<HotelsListAdapter.Ho
     }
 
     public class HotelViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        @BindView(R.id.restaurantImageView) ImageView mRestaurantImageView;
+        @BindView(R.id.hotelimage) ImageView mhotelimage;
         @BindView(R.id.hotelnametxt) TextView mNameTextView;
         @BindView(R.id.categoryTextView) TextView mCategoryTextView;
         @BindView(R.id.ratingTextView) TextView mRatingTextView;
@@ -63,11 +63,11 @@ public class HotelsListAdapter extends RecyclerView.Adapter<HotelsListAdapter.Ho
             itemView.setOnClickListener(this);
         }
 
-        public void bindRestaurant(Hotels hotels) {
+        public void bindHotels(Hotels hotels) {
             mNameTextView.setText(hotels.getName());
             mCategoryTextView.setText(hotels.getCategories().get(0));
             mRatingTextView.setText("Rating: " + hotels.getRating() + "/5");
-            Picasso.get().load(hotels.getImageUrl()).into(mRestaurantImageView);
+            Picasso.get().load(hotels.getImageUrl()).into(mhotelimage);
         }
 
         @Override
@@ -75,7 +75,7 @@ public class HotelsListAdapter extends RecyclerView.Adapter<HotelsListAdapter.Ho
             int itemPosition = getLayoutPosition();
             Intent intent = new Intent(mContext, HotelDetailActivity.class);
             intent.putExtra("position", itemPosition);
-            intent.putExtra("restaurants", Parcels.wrap(mhotels));
+            intent.putExtra("hotels", Parcels.wrap(mhotels));
             mContext.startActivity(intent);
         }
     }
