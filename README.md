@@ -18,7 +18,7 @@ The following application is an application that suggests our Users,different li
 * Yelp Api
 
 ## Screenshot
-![first Image](/drawable/homepage.png)
+![first Image](/screenshot/homepage.png)
 
 ## Support and contact details
 If you come across any problems you can reach me at: ubelyse1@gmail.com
