@@ -4,7 +4,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import com.example.hotelreserve.ui.Business;
 import com.example.hotelreserve.ui.HotelDetailFragment;
 
 import java.util.List;

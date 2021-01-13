@@ -1,7 +1,5 @@
 package com.example.hotelreserve.network;
 
-import com.example.hotelreserve.network.YelpApi;
-
 import java.io.IOException;
 
 import okhttp3.Interceptor;
