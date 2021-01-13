@@ -18,10 +18,10 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
-        android:text="Hotel"
-        android:textColor="@color/colorTextIcons"
-        android:textSize="50sp"
-        android:textStyle="bold" />
+        android:text="HOBEL"
+        android:textSize="60sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorTextIcons" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -31,7 +31,7 @@
         android:layout_above="@+id/findHotel"
         android:layout_marginBottom="10dp"
         android:padding="5dp"
-        android:hint="Enter Nearest Location"
+        android:hint="Enter Zip Code"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="Get the Nearest Hotel"
+        android:text="Find Hotel"
         android:textColor="@color/colorTextIcons"
         android:background="@color/colorAccent"/>
 </RelativeLayout>

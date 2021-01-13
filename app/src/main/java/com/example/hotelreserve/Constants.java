@@ -1,6 +1,7 @@
 package com.example.hotelreserve;
 
 public class Constants {
-    public static final String YELP_BASE_URL = "https://api.globaleur.com/v1/";
-    public static final String YELP_API_KEY = BuildConfig.YELP_API_KEY;
+    public static final String YELP_BASE_URL = "test.api.amadeus.com";
+    public static final String YELP_TOKEN = BuildConfig.YELP_TOKEN;
+    public static final String YELP_LOCATION_QUERY_PARAMETER = "location";
 }

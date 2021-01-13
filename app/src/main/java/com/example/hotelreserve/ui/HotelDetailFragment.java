@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.example.hotelreserve.R;
 import com.example.hotelreserve.models.AddressObj;
 import com.example.hotelreserve.models.Category;
+import com.example.hotelreserve.models.Hotels;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
@@ -34,17 +35,16 @@ public class HotelDetailFragment extends Fragment {
     @BindView(R.id.addressTextView) TextView mAddressLabel;
     @BindView(R.id.savehotelbtn) TextView mSaveRestaurantButton;
 
-    private AddressObj maddhotel;
-    private Category mhotelcategory
+    private Hotels mhotels;
 
     public HotelDetailFragment() {
         // Required empty public constructor
     }
 
-    public static HotelDetailFragment newInstance(AddressObj hotel){
+    public static HotelDetailFragment newInstance(Hotels hotels){
         HotelDetailFragment restaurantDetailFragment = new HotelDetailFragment();
         Bundle args = new Bundle();
-        args.putParcelable("hotel", Parcels.wrap(hotel));
+        args.putParcelable("hotels", Parcels.wrap(hotels));
         restaurantDetailFragment.setArguments(args);
         return restaurantDetailFragment;
     }
@@ -52,7 +52,7 @@ public class HotelDetailFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        maddhotel = Parcels.unwrap(getArguments().getParcelable("hotel"));
+        mhotels = Parcels.unwrap(getArguments().getParcelable("hotels"));
     }
 
     @Override
@@ -61,12 +61,12 @@ public class HotelDetailFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_hotel_detail, container, false);
         ButterKnife.bind(this, view);
-        Picasso.get().load(maddhotel.getImageUrl()).into(mImageLabel);
-        mNameLabel.setText(maddhotel.getName());
-        mCategoriesLabel.setText(android.text.TextUtils.join(", ", mhotelcategory.getLocalizedName()));
-        mRatingLabel.setText(Double.toString(maddhotel.getRating()) + "/5");
-        mPhoneLabel.setText(maddhotel.getPhone());
-        mAddressLabel.setText(android.text.TextUtils.join(", ", maddhotel.getAddress()));
+        Picasso.get().load(mhotels.getImageUrl()).into(mImageLabel);
+        mNameLabel.setText(mhotels.getName());
+        mCategoriesLabel.setText(android.text.TextUtils.join(", ", mhotels.getCategories()));
+        mRatingLabel.setText(Double.toString(mhotels.getRating()) + "/5");
+        mPhoneLabel.setText(mhotels.getPhone());
+        mAddressLabel.setText(android.text.TextUtils.join(", ", mhotels.getAddress()));
         return view;
     }
 }

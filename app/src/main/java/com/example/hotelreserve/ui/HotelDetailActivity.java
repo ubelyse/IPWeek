@@ -9,6 +9,7 @@ import android.os.Bundle;
 import com.example.hotelreserve.R;
 import com.example.hotelreserve.adapter.HotelsPageADapter;
 import com.example.hotelreserve.models.AddressObj;
+import com.example.hotelreserve.models.Hotels;
 
 import org.parceler.Parcels;
 
@@ -21,7 +22,7 @@ import butterknife.ButterKnife;
 public class HotelDetailActivity extends AppCompatActivity {
     @BindView(R.id.viewPager) ViewPager mViewPager;
     private HotelsPageADapter adapterViewPager;
-    ArrayList<AddressObj> mhoteladdress = new ArrayList<>();
+    ArrayList<Hotels> mhotels = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +31,10 @@ public class HotelDetailActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        mhoteladdress = Parcels.unwrap(getIntent().getParcelableExtra("hotels"));
+        mhotels = Parcels.unwrap(getIntent().getParcelableExtra("hotels"));
         int startingPosition = getIntent().getIntExtra("position", 0);
 
-        adapterViewPager = new HotelsPageADapter(getSupportFragmentManager(), mhoteladdress);
+        adapterViewPager = new HotelsPageADapter(getSupportFragmentManager(), mhotels);
         mViewPager.setAdapter(adapterViewPager);
         mViewPager.setCurrentItem(startingPosition);
     }
