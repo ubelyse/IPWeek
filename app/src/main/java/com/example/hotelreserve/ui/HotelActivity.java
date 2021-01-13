@@ -36,10 +36,10 @@ public class HotelActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
-        getRestaurants(location);
+        getHotels(location);
     }
 
-    private void getRestaurants(String location){
+    private void getHotels(String location){
         final YelpClient yelpClient = new YelpClient();
         yelpClient.findHotels(location, new Callback(){
 
