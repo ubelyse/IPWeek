@@ -6,22 +6,22 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
-import com.example.hotelreserve.Business;
 import com.example.hotelreserve.R;
 import com.example.hotelreserve.adapter.HotelsPageADapter;
+import com.example.hotelreserve.models.AddressObj;
 
 import org.parceler.Parcels;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class HotelDetailActivity extends AppCompatActivity {
-    @BindView(R.id.viewPager)
-    ViewPager mViewPager;
+    @BindView(R.id.viewPager) ViewPager mViewPager;
     private HotelsPageADapter adapterViewPager;
-    List<Business> mhotels;
+    ArrayList<AddressObj> mhoteladdress = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +30,10 @@ public class HotelDetailActivity extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        mhotels = Parcels.unwrap(getIntent().getParcelableExtra("hotels"));
+        mhoteladdress = Parcels.unwrap(getIntent().getParcelableExtra("hotels"));
         int startingPosition = getIntent().getIntExtra("position", 0);
 
-        adapterViewPager = new HotelsPageADapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT, mhotels);
+        adapterViewPager = new HotelsPageADapter(getSupportFragmentManager(), mhoteladdress);
         mViewPager.setAdapter(adapterViewPager);
         mViewPager.setCurrentItem(startingPosition);
     }

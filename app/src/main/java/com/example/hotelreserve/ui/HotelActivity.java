@@ -11,15 +11,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.hotelreserve.Business;
-import com.example.hotelreserve.Category;
+import com.example.hotelreserve.models.AddressObj;
+import com.example.hotelreserve.models.Category;
 import com.example.hotelreserve.R;
-import com.example.hotelreserve.YelpBusinessesSearchResponse;
+import com.example.hotelreserve.models.YelpBusinessesSearchResponse;
 import com.example.hotelreserve.adapter.HotelArrayAdapter;
-import com.example.hotelreserve.adapter.HotelsListAdapter;
 import com.example.hotelreserve.network.YelpApi;
 import com.example.hotelreserve.network.YelpClient;
 
@@ -68,7 +65,7 @@ public class HotelActivity extends AppCompatActivity {
                 hideProgressBar();
 
                 if (response.isSuccessful()) {
-                    List<Business> hotelList = response.body().getBusinesses();
+                    List<AddressObj> hotelList = response.body().getHotelBooking();
                     String[] hotels = new String[hotelList.size()];
                     String[] categories = new String[hotelList.size()];
 
@@ -77,8 +74,8 @@ public class HotelActivity extends AppCompatActivity {
                     }
 
                     for (int i = 0; i < categories.length; i++) {
-                        Category category = hotelList.get(i).getCategories().get(0);
-                        categories[i] = category.getTitle();
+                        Category category = hotelList.get(i).getName().get(0);
+                        categories[i] = category.getName();
                     }
 
                     ArrayAdapter adapter

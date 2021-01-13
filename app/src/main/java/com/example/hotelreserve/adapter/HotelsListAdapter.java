@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.hotelreserve.Business;
 import com.example.hotelreserve.R;
 import com.squareup.picasso.Picasso;
 
