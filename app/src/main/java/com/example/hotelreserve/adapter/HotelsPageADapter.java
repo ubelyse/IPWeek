@@ -4,11 +4,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.example.hotelreserve.Business;
 import com.example.hotelreserve.ui.HotelDetailFragment;
 
 import java.util.List;
 
-public class HotelsPageADapter extends FragmentPagerAdapter {
+public class
+HotelsPageADapter extends FragmentPagerAdapter {
     private List<Business> mhotels;
 
     public HotelsPageADapter(FragmentManager fm, int behavior, List<Business> restaurants) {

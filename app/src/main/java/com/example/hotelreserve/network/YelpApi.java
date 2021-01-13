@@ -1,13 +1,15 @@
 package com.example.hotelreserve.network;
 
+import com.example.hotelreserve.YelpBusinessesSearchResponse;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
 public interface YelpApi {
 
-    @GET("/activities")
-    Call<HotelResrve> getHotels(
+    @GET("businesses/search")
+    Call<YelpBusinessesSearchResponse> getHotels(
             @Query("location") String location,
             @Query("term") String term
     );

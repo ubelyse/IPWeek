@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.hotelreserve.Business;
+import com.example.hotelreserve.Category;
 import com.example.hotelreserve.R;
 import com.squareup.picasso.Picasso;
 

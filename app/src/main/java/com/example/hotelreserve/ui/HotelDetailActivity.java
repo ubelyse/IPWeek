@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
+import com.example.hotelreserve.Business;
 import com.example.hotelreserve.R;
 import com.example.hotelreserve.adapter.HotelsPageADapter;
 
